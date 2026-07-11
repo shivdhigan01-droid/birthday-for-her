@@ -19,7 +19,7 @@ openBtn.addEventListener("click", () => {
 function createHeart() {
     const heart = document.createElement("div");
 
-    heart.innerHTML = "❤";
+    heart.innerHTML = "💗";
     heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.top = "-20px";
