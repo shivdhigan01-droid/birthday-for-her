@@ -2,74 +2,95 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Poppins,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#fff,#ffe4ef);
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
+background:linear-gradient(135deg,#fff7fb,#ffe4ef);
+color:#444;
+overflow-x:hidden;
 }
 
 #intro{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:30px;
-background:rgba(255,255,255,.75);
-backdrop-filter:blur(12px);
-border-radius:25px;
-box-shadow:0 10px 35px rgba(255,105,180,.25);
-max-width:350px;
-animation:fadeIn 1.5s ease;
+padding:20px;
 }
 
 .envelope{
-font-size:90px;
-animation:float 2.5s ease-in-out infinite;
+font-size:100px;
+animation:float 3s ease-in-out infinite;
 }
 
 h1{
 color:#ff4f9a;
-font-size:30px;
-margin:15px 0;
+font-size:32px;
+margin:20px 0;
 }
 
 p{
+font-size:18px;
 color:#666;
-margin-bottom:25px;
+line-height:1.7;
 }
 
 button{
-padding:15px 30px;
-border:none;
-border-radius:40px;
 background:#ff5ca8;
-color:white;
+color:#fff;
+border:none;
+padding:15px 35px;
 font-size:18px;
+border-radius:40px;
 cursor:pointer;
+margin-top:25px;
 transition:.3s;
-box-shadow:0 6px 20px rgba(255,92,168,.35);
+box-shadow:0 8px 20px rgba(255,92,168,.3);
 }
 
 button:hover{
-transform:scale(1.08);
-background:#ff2f8b;
+transform:scale(1.05);
+}
+
+#birthday{
+padding:30px;
+text-align:center;
+}
+
+.cake{
+font-size:120px;
+margin:20px 0;
+animation:bounce 2s infinite;
+}
+
+.photos{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:20px;
+}
+
+.photos img{
+width:100%;
+border-radius:18px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+#letter{
+margin-top:40px;
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 @keyframes float{
-0%,100%{transform:translateY(0);}
 50%{transform:translateY(-15px);}
 }
 
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+@keyframes bounce{
+50%{transform:translateY(-10px);}
 }
