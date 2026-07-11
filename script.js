@@ -1,14 +1,22 @@
 
+const openBtn = document.getElementById("openBtn");
+const intro = document.getElementById("intro");
+const birthday = document.getElementById("birthday");
 const flowerIntro = document.getElementById("flowerIntro");
+const bgMusic = document.getElementById("bgMusic");
 
-flowerIntro.style.display = "flex";
+openBtn.addEventListener("click", () => {
 
-setTimeout(() => {
+    bgMusic.play().catch(() => {});
 
-    flowerIntro.style.display = "none";
-    birthday.style.display = "block";
+    intro.style.display = "none";
 
-}, 4000);
+    flowerIntro.style.display = "flex";
+
+    setTimeout(() => {
+        flowerIntro.style.display = "none";
+        birthday.style.display = "block";
+    }, 4000);
 
 });
 // Floating Hearts 💗
