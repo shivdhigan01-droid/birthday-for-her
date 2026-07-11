@@ -142,3 +142,10 @@ function createFlower(){
     },8000);
 
 }
+// Start Flower Rain
+const flowerInterval = setInterval(createFlower, 80);
+
+// Stop after 4 seconds
+setTimeout(() => {
+    clearInterval(flowerInterval);
+}, 4000);
