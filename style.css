@@ -117,3 +117,19 @@ box-shadow:0 10px 25px rgba(0,0,0,.08);
   75% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
+#rose{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#fff7fb,#ffe4ef);
+}
+
+.rose-flower{
+    font-size:120px;
+    display:block;
+    margin-bottom:20px;
+    animation:bounce 2s infinite;
+}
