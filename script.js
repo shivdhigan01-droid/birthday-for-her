@@ -18,8 +18,6 @@ openBtn.addEventListener("click", () => {
 
     }, 4000);
 
-});
-
 
 });
 // Floating Hearts 💗
