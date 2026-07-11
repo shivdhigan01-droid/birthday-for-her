@@ -20,6 +20,9 @@ function createHeart() {
     const heart = document.createElement("div");
 
     heart.innerHTML = "💗";
+heart.style.filter = "drop-shadow(0 0 10px #ff69b4)";
+heart.style.textShadow = "0 0 15px #ff69b4";
+heart.style.animation = "heartbeat 1.5s infinite";
     heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.top = "-20px";
