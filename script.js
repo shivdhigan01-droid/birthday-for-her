@@ -9,7 +9,7 @@ openBtn.addEventListener("click", () => {
 
     const rose = document.getElementById("rose");
 
-    rose.style.display = "block";
+    rose.style.display = "flex";
 
     setTimeout(() => {
 
