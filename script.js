@@ -1,5 +1,6 @@
 
 const openBtn = document.getElementById("openBtn");
+document.getElementById("bgMusic").play();
 const intro = document.getElementById("intro");
 const birthday = document.getElementById("birthday");
 
