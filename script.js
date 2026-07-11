@@ -84,29 +84,30 @@ function createSparkle(){
 setInterval(createSparkle,400);
 // 🌸 Premium Flower Rain
 
-const flowers = ["🌸","🌺","🌷","🌹","🌼"];
+const flowers = [
+    "flower1.png",
+    "flower2.png",
+    "flower3.png"
+];
 
 function createFlower(){
 
-    const flower = document.createElement("div");
+    const flower = document.createElement("img");
 
     flower.className = "flower";
 
-    flower.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
+    flower.src = flowers[Math.floor(Math.random() * flowers.length)];
 
-    flower.style.left = Math.random()*100 + "vw";
-
-    flower.style.fontSize = (24 + Math.random()*24) + "px";
-
-    flower.style.animationDuration = (3 + Math.random()*3) + "s";
-
-    flower.style.transform = `rotate(${Math.random()*360}deg)`;
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.width = (30 + Math.random() * 25) + "px";
+    flower.style.animationDuration = (3 + Math.random() * 3) + "s";
 
     document.getElementById("flowerContainer").appendChild(flower);
 
-    setTimeout(()=>{
+    setTimeout(() => {
         flower.remove();
-    },6000);
+    }, 6000);
+}
 
 }
 // 📸 Memory Slideshow
