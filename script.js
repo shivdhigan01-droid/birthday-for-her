@@ -14,7 +14,7 @@ openBtn.addEventListener("click", () => {
     });
 
 });
-// Floating Hearts ❤️
+// Floating Hearts 💗
 
 function createHeart() {
     const heart = document.createElement("div");
