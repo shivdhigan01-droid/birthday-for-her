@@ -49,3 +49,28 @@ heart.style.animation = "heartbeat 1.5s infinite";
 }
 
 setInterval(createHeart, 500);
+// ✨ Sparkles
+
+function createSparkle() {
+
+    const s = document.createElement("div");
+
+    s.innerHTML = "✨";
+
+    s.style.position = "fixed";
+    s.style.left = Math.random()*100 + "vw";
+    s.style.top = Math.random()*100 + "vh";
+    s.style.fontSize = (10 + Math.random()*15) + "px";
+    s.style.opacity = ".8";
+    s.style.pointerEvents = "none";
+    s.style.zIndex = "9998";
+
+    document.body.appendChild(s);
+
+    setTimeout(()=>{
+        s.remove();
+    },1800);
+
+}
+
+setInterval(createSparkle,500);
