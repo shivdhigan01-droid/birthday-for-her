@@ -154,12 +154,13 @@ box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .flower{
-    position:absolute;
-    top:-80px;
-    border-radius:50%;
+    position:fixed;
+    top:-60px;
+    font-size:28px;
+    pointer-events:none;
+    z-index:99999;
     animation:flowerFall linear forwards;
-    opacity:.95;
-    box-shadow:0 0 12px rgba(255,105,180,.35);
+    filter:drop-shadow(0 0 8px rgba(255,105,180,.5));
 }
 
 .flowerText{
