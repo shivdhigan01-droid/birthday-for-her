@@ -55,13 +55,15 @@ function createSparkle() {
 
     const s = document.createElement("div");
 
-    s.innerHTML = "✨";
+    s.innerHTML = "⭐";
+s.style.color = "#FFD700";
+s.style.textShadow = "0 0 12px gold";
 
     s.style.position = "fixed";
     s.style.left = Math.random()*100 + "vw";
     s.style.top = Math.random()*100 + "vh";
     s.style.fontSize = (10 + Math.random()*15) + "px";
-    s.style.opacity = ".8";
+    s.style.opacity = "1";
     s.style.pointerEvents = "none";
     s.style.zIndex = "9998";
 
