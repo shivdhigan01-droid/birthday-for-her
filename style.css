@@ -94,3 +94,12 @@ box-shadow:0 10px 25px rgba(0,0,0,.08);
 @keyframes bounce{
 50%{transform:translateY(-10px);}
 }
+@keyframes floatHeart {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100vh);
+    }
+}
