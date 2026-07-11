@@ -114,3 +114,31 @@ function createPetal() {
 }
 
 setInterval(createPetal, 900);
+// 🌸 Premium Flower Rain
+
+const flowers = ["🌸","🌺","🌷","🌹"];
+
+function createFlower(){
+
+    const flower = document.createElement("div");
+
+    flower.className = "flower";
+
+    flower.innerHTML =
+        flowers[Math.floor(Math.random()*flowers.length)];
+
+    flower.style.left = Math.random()*100 + "vw";
+
+    flower.style.animationDuration =
+        (4 + Math.random()*4) + "s";
+
+    flower.style.fontSize =
+        (22 + Math.random()*20) + "px";
+
+    document.getElementById("flowerContainer").appendChild(flower);
+
+    setTimeout(()=>{
+        flower.remove();
+    },8000);
+
+}
