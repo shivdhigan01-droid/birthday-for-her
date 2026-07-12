@@ -37,14 +37,16 @@ function createHeart(){
     const heart=document.createElement("div");
 
     heart.innerHTML="💗";
-
+heart.style.filter = "drop-shadow(0 0 8px #ff1493) drop-shadow(0 0 15px #ff69b4)";
+heart.style.textShadow = "0 0 12px #ff69b4";
+heart.style.opacity = "0.95";
     heart.style.position="fixed";
     heart.style.left=Math.random()*100+"vw";
     heart.style.top="-50px";
     heart.style.fontSize=(15+Math.random()*8)+"px";
     heart.style.zIndex="999999";
     heart.style.pointerEvents="none";
-    heart.style.animation="heartbeat 1.5s infinite";
+    heart.style.animation="heartbeat 1.2s infinite";
 
     document.body.appendChild(heart);
 
