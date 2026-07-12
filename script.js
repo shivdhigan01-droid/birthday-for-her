@@ -209,7 +209,9 @@ slide.style.opacity="1";
 },300);
 
 },2500);
-document.getElementById("memoryGift").style.display = "block";
+setTimeout(() => {
+    document.getElementById("memoryGift").style.display = "block";
+}, 11000);
 // 💌 Show second envelope after 15 seconds
 
 setTimeout(() => {
@@ -227,3 +229,56 @@ setTimeout(() => {
     }
 
 },15000);
+// ❤️ Memory Gift
+
+const memoryBtn = document.getElementById("memoryBtn");
+const photoReveal = document.getElementById("photoReveal");
+const giftPhoto = document.getElementById("giftPhoto");
+const giftQuote = document.getElementById("giftQuote");
+
+const giftPhotos = [
+    "photo5.jpg",
+    "photo6.jpg",
+    "photo7.jpg",
+    "photo8.jpg"
+];
+
+const giftQuotes = [
+    "Every moment with you feels like a beautiful dream. ❤️",
+    "Your smile is my favorite place in the world. 🌸",
+    "If I could choose again, I'd choose you every single time. 💖",
+    "You are my today, my tomorrow, and my forever. ❤️"
+];
+
+let giftIndex = 0;
+
+memoryBtn.addEventListener("click", () => {
+
+    document.getElementById("memoryGift").style.display = "none";
+    photoReveal.style.display = "block";
+
+    giftPhoto.src = giftPhotos[0];
+    giftQuote.innerHTML = giftQuotes[0];
+
+    const showPhotos = setInterval(() => {
+
+        giftIndex++;
+
+        if(giftIndex >= giftPhotos.length){
+            clearInterval(showPhotos);
+            return;
+        }
+
+        giftPhoto.style.opacity = "0";
+
+        setTimeout(() => {
+
+            giftPhoto.src = giftPhotos[giftIndex];
+            giftQuote.innerHTML = giftQuotes[giftIndex];
+            giftPhoto.style.opacity = "1";
+
+        },400);
+
+    },3000);
+
+});
