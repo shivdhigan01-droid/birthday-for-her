@@ -34,6 +34,7 @@ function createHeart() {
     const heart = document.createElement("div");
 
     heart.innerHTML = "💗";
+    heart.className = "heart";
     heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.top = "-30px";
