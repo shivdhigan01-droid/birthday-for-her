@@ -209,6 +209,7 @@ slide.style.opacity="1";
 },300);
 
 },2500);
+document.getElementById("memoryGift").style.display = "block";
 // 💌 Show second envelope after 15 seconds
 
 setTimeout(() => {
