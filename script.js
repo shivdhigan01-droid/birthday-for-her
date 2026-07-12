@@ -37,7 +37,7 @@ function createHeart() {
     heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.top = "-30px";
-    petal.style.fontSize = (35 + Math.random() * 20) + "px";
+    heart.style.fontSize = (35 + Math.random() * 20) + "px";
     heart.style.pointerEvents = "none";
     heart.style.zIndex = "9999";
     heart.style.filter = "drop-shadow(0 0 10px hotpink)";
@@ -80,7 +80,7 @@ function createSparkle(){
     s.style.pointerEvents="none";
     s.style.zIndex="9998";
 
-    document.body.appendChild(s);
+    document.getElementById("flowerContainer").appendChild(s);
 
     setTimeout(()=>{
         s.remove();
