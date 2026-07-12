@@ -231,3 +231,65 @@ transform:translateY(0);
 }
 
 }
+/* ❤️ Memory Gift */
+
+#memoryGift{
+display:none;
+text-align:center;
+margin-top:70px;
+animation:fadeUp 1s ease;
+}
+
+#memoryBtn{
+font-size:90px;
+cursor:pointer;
+display:inline-block;
+transition:.4s;
+animation:float 3s ease-in-out infinite;
+}
+
+#memoryBtn:hover{
+transform:scale(1.15) rotate(-8deg);
+filter:drop-shadow(0 0 20px pink);
+}
+
+#photoReveal{
+display:none;
+text-align:center;
+margin-top:40px;
+animation:fadeUp .8s ease;
+}
+
+#giftPhoto{
+width:240px;
+height:320px;
+object-fit:cover;
+border:12px solid #fff;
+border-bottom:45px solid #fff;
+border-radius:8px;
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+transition:.6s;
+}
+
+#giftQuote{
+margin-top:20px;
+font-size:20px;
+color:#ff4f9a;
+font-style:italic;
+padding:0 20px;
+line-height:1.6;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
