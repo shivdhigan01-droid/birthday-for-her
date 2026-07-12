@@ -207,3 +207,18 @@ object-fit:contain;
 }
 
 }
+#flowerIntro{
+    pointer-events:none;
+}
+
+#flowerContainer{
+    z-index:1;
+}
+
+.flowerText{
+    z-index:5;
+}
+
+.heart{
+    z-index:999999;
+}
