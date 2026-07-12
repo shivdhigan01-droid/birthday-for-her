@@ -46,7 +46,8 @@ heart.style.opacity = "0.95";
     heart.style.fontSize=(15+Math.random()*8)+"px";
     heart.style.zIndex="999999";
     heart.style.pointerEvents="none";
-    heart.style.animation="heartbeat 1.2s infinite";
+    heart.style.filter =
+"drop-shadow(0 0 6px #ff1493) drop-shadow(0 0 15px #ff69b4) drop-shadow(0 0 25px #ffb6c1)";
 
     document.body.appendChild(heart);
 
