@@ -2,202 +2,203 @@ const openBtn = document.getElementById("openBtn");
 const intro = document.getElementById("intro");
 const birthday = document.getElementById("birthday");
 const flowerIntro = document.getElementById("flowerIntro");
+const flowerContainer = document.getElementById("flowerContainer");
 const bgMusic = document.getElementById("bgMusic");
 
 openBtn.addEventListener("click", () => {
 
     bgMusic.volume = 0.7;
-bgMusic.currentTime = 0;
-
-bgMusic.play().then(() => {
-    console.log("Music Playing");
-}).catch(err => {
-    console.log(err);
-});
+    bgMusic.play().catch(()=>{});
 
     intro.style.display = "none";
     flowerIntro.style.display = "flex";
 
-    const flowerInterval = setInterval(createFlower, 25);
+    const rain = setInterval(createFlower,20);
 
-    setTimeout(() => {
-        clearInterval(flowerInterval);
-        flowerIntro.style.display = "none";
-        birthday.style.display = "block";
-    }, 6000);
+    setTimeout(()=>{
+        clearInterval(rain);
+        flowerIntro.style.display="none";
+        birthday.style.display="block";
+    },6000);
 
 });
-// 💗 Floating Hearts
 
-function createHeart() {
 
-    const heart = document.createElement("div");
+// ❤️ HEARTS
 
-    heart.innerHTML = "💗";
-    heart.className = "heart";
-    heart.style.position = "fixed";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.top = "-30px";
-    heart.style.fontSize = (35 + Math.random() * 20) + "px";
-    heart.style.pointerEvents = "none";
-    heart.style.zIndex = "9999";
-    heart.style.filter = "drop-shadow(0 0 10px hotpink)";
-    heart.style.animation = "heartbeat 1.5s infinite";
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.innerHTML="💗";
+
+    heart.style.position="fixed";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.top="-50px";
+    heart.style.fontSize=(28+Math.random()*20)+"px";
+    heart.style.zIndex="999999";
+    heart.style.pointerEvents="none";
+    heart.style.animation="heartbeat 1.5s infinite";
 
     document.body.appendChild(heart);
 
-    let y = -30;
+    let y=-50;
 
-    const fall = setInterval(() => {
+    const fall=setInterval(()=>{
 
-        y += 2;
+        y+=2.5;
 
-        heart.style.top = y + "px";
+        heart.style.top=y+"px";
 
-        if (y > window.innerHeight) {
+        if(y>window.innerHeight){
+
             clearInterval(fall);
             heart.remove();
+
         }
 
     },20);
 
 }
 
-setInterval(createHeart,500);
+setInterval(createHeart,450);
 
 
-// ✨ Sparkles
+// ✨ SPARKLES
 
 function createSparkle(){
 
-    const s = document.createElement("div");
+    const s=document.createElement("div");
 
     s.innerHTML="✨";
 
     s.style.position="fixed";
     s.style.left=Math.random()*100+"vw";
     s.style.top=Math.random()*100+"vh";
-    s.style.fontSize=(10+Math.random()*15)+"px";
+    s.style.fontSize=(12+Math.random()*12)+"px";
     s.style.pointerEvents="none";
-    s.style.zIndex="9998";
+    s.style.zIndex="999998";
 
-    document.getElementById("flowerContainer").appendChild(s);
+    document.body.appendChild(s);
 
     setTimeout(()=>{
+
         s.remove();
-    },1500);
+
+    },1200);
 
 }
 
-setInterval(createSparkle,400);
-// 🌸 Falling Petals
+setInterval(createSparkle,350);
+
+
+// 🌸 PETALS
 
 function createPetal(){
 
-    const petal = document.createElement("div");
+    const p=document.createElement("div");
 
-    petal.innerHTML = "🌸";
+    p.innerHTML="🌸";
 
-    petal.style.position = "fixed";
-    petal.style.left = Math.random() * 100 + "vw";
-    petal.style.top = "-30px";
-    petal.style.fontSize = (20 + Math.random() * 18) + "px";
-    petal.style.pointerEvents = "none";
-    petal.style.zIndex = "100000";
-    petal.style.opacity = "0.9";
+    p.style.position="fixed";
+    p.style.left=Math.random()*100+"vw";
+    p.style.top="-40px";
+    p.style.fontSize=(22+Math.random()*18)+"px";
+    p.style.pointerEvents="none";
+    p.style.zIndex="999997";
 
-    document.getElementById("flowerContainer").appendChild(petal);
+    document.body.appendChild(p);
 
-    let y = -30;
-    let x = Math.random() * 40 - 20;
+    let y=-40;
 
-    const fall = setInterval(() => {
+    const fall=setInterval(()=>{
 
-        y += 2;
+        y+=2;
 
-        petal.style.top = y + "px";
-        petal.style.transform =
-            `translateX(${x}px) rotate(${y}deg)`;
+        p.style.top=y+"px";
 
-        if(y > window.innerHeight){
+        p.style.transform=`translateX(${Math.sin(y/30)*20}px) rotate(${y}deg)`;
+
+        if(y>window.innerHeight){
+
             clearInterval(fall);
-            petal.remove();
+            p.remove();
+
         }
 
     },20);
 
 }
 
-setInterval(createPetal,700);
-// 🌸 Premium Flower Rain
+setInterval(createPetal,650);
 
-const flowers = [
-    "flower1.png",
-    "flower2.png",
-    "flower3.png"
+
+// 🌹 PNG FLOWERS
+
+const flowers=[
+"flower1.png",
+"flower2.png",
+"flower3.png"
 ];
 
 function createFlower(){
 
-    const flower = document.createElement("img");
+    const f=document.createElement("img");
 
-    flower.className = "flower";
+    f.src=flowers[Math.floor(Math.random()*flowers.length)];
 
-    flower.src = flowers[Math.floor(Math.random() * flowers.length)];
+    f.className="flower";
 
-    flower.style.left = Math.random() * 100 + "vw";
-    flower.style.width = (30 + Math.random() * 25) + "px";
-    flower.style.animationDuration = (3 + Math.random() * 3) + "s";
+    f.style.left=Math.random()*100+"vw";
+    f.style.width=(35+Math.random()*25)+"px";
+    f.style.animationDuration=(3+Math.random()*3)+"s";
 
-    document.getElementById("flowerContainer").appendChild(flower);
-
-    setTimeout(() => {
-        flower.remove();
-    }, 6000);
-}
-
-// 📸 Memory Slideshow
-
-const images = [
-    "photo1.jpg",
-    "photo2.jpg",
-    "photo3.jpg",
-    "photo4.jpg"
-];
-
-const captions = [
-    "The smile I'll never forget ❤️",
-    "Every moment with you is special 💖",
-    "Our beautiful memories together 🌸",
-    "Forever my favorite person ❤️"
-];
-
-let currentPhoto = 0;
-
-const slideImage = document.getElementById("slideImage");
-const photoCaption = document.getElementById("photoCaption");
-
-function changePhoto(){
-
-    if(!slideImage || !photoCaption) return;
-
-    currentPhoto++;
-
-    if(currentPhoto >= images.length){
-        currentPhoto = 0;
-    }
-
-    slideImage.style.opacity = "0";
+    flowerContainer.appendChild(f);
 
     setTimeout(()=>{
 
-        slideImage.src = images[currentPhoto];
-        photoCaption.innerText = captions[currentPhoto];
+        f.remove();
 
-        slideImage.style.opacity = "1";
-
-    },400);
+    },6000);
 
 }
 
-setInterval(changePhoto,2500);
+
+// 📸 SLIDESHOW
+
+const images=[
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg",
+"photo4.jpg"
+];
+
+const captions=[
+"The smile I'll never forget ❤️",
+"Every moment with you is special 💖",
+"Our beautiful memories together 🌸",
+"Forever my favorite person ❤️"
+];
+
+let current=0;
+
+const slide=document.getElementById("slideImage");
+const caption=document.getElementById("photoCaption");
+
+setInterval(()=>{
+
+current++;
+
+if(current>=images.length) current=0;
+
+slide.style.opacity="0";
+
+setTimeout(()=>{
+
+slide.src=images[current];
+caption.innerHTML=captions[current];
+slide.style.opacity="1";
+
+},300);
+
+},2500);
