@@ -60,9 +60,9 @@ const slideShow = setInterval(() => {
     }
 
 },2500);
-    setInterval(createHeart,700);
-    setInterval(createSparkle,700);
-    setInterval(createPetal,1000);
+    setInterval(createHeart,1200);
+    setInterval(createSparkle,1000);
+    setInterval(createPetal,1800);
 
 },6000);
 
@@ -92,9 +92,8 @@ heart.style.opacity = "0.95";
 
     let y=-50;
 
-    const fall=setInterval(()=>{
-
-        y+=2.5;
+    const fall = setInterval(()=>{
+    y += 8;
 
         heart.style.top=y+"px";
 
@@ -105,7 +104,7 @@ heart.style.opacity = "0.95";
 
         }
 
-    },20);
+    },50);
 
 }
 
@@ -159,7 +158,7 @@ function createPetal(){
 
     const fall=setInterval(()=>{
 
-        y+=2;
+        y+=8;
 
         p.style.top=y+"px";
 
@@ -172,7 +171,7 @@ function createPetal(){
 
         }
 
-    },20);
+    },50);
 
 }
 
@@ -197,7 +196,7 @@ function createFlower(){
 
     f.style.left=Math.random()*100+"vw";
     f.style.width=(28+Math.random()*18)+"px";
-    f.style.animationDuration=(3+Math.random()*3)+"s";
+    f.style.animationDuration=(2+Math.random()*1.5)+"s";
 
     flowerContainer.appendChild(f);
 
