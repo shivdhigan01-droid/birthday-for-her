@@ -83,7 +83,8 @@ function createSparkle(){
     s.style.fontSize=(12+Math.random()*12)+"px";
     s.style.pointerEvents="none";
     s.style.zIndex="999998";
-
+s.style.color="gold";
+s.style.textShadow="0 0 15px gold";
     document.body.appendChild(s);
 
     setTimeout(()=>{
