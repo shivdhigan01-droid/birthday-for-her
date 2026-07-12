@@ -13,7 +13,7 @@ openBtn.addEventListener("click", () => {
     intro.style.display = "none";
     flowerIntro.style.display = "flex";
 
-    const rain = setInterval(createFlower,20);
+    const rain = setInterval(createFlower,45);
 
 setTimeout(()=>{
     clearInterval(rain);
@@ -60,9 +60,9 @@ const slideShow = setInterval(() => {
     }
 
 },2500);
-    setInterval(createHeart,450);
-    setInterval(createSparkle,350);
-    setInterval(createPetal,650);
+    setInterval(createHeart,700);
+    setInterval(createSparkle,700);
+    setInterval(createPetal,1000);
 
 },6000);
 
@@ -196,7 +196,7 @@ function createFlower(){
     f.className="flower";
 
     f.style.left=Math.random()*100+"vw";
-    f.style.width=(35+Math.random()*25)+"px";
+    f.style.width=(28+Math.random()*18)+"px";
     f.style.animationDuration=(3+Math.random()*3)+"s";
 
     flowerContainer.appendChild(f);
