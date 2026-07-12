@@ -18,13 +18,13 @@ bgMusic.play().then(() => {
     intro.style.display = "none";
     flowerIntro.style.display = "flex";
 
-    const flowerInterval = setInterval(createFlower, 80);
+    const flowerInterval = setInterval(createFlower, 25);
 
     setTimeout(() => {
         clearInterval(flowerInterval);
         flowerIntro.style.display = "none";
         birthday.style.display = "block";
-    }, 4000);
+    }, 6000);
 
 });
 // 💗 Floating Hearts
