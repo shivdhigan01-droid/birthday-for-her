@@ -42,8 +42,8 @@ function createHeart() {
     heart.style.zIndex = "9999";
     heart.style.filter = "drop-shadow(0 0 10px hotpink)";
     heart.style.animation = "heartbeat 1.5s infinite";
-document.getElementById("flowerContainer").appendChild(heart);
-    
+
+    document.body.appendChild(heart);
 
     let y = -30;
 
