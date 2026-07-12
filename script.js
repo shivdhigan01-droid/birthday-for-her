@@ -265,8 +265,17 @@ memoryBtn.addEventListener("click", () => {
         giftIndex++;
 
         if(giftIndex >= giftPhotos.length){
-            clearInterval(showPhotos);
-            return;
+
+    clearInterval(showPhotos);
+
+    setTimeout(()=>{
+
+        photoReveal.style.display="none";
+        document.getElementById("finalMessage").style.display="block";
+
+    },2500);
+
+    return;
         }
 
         giftPhoto.style.opacity = "0";
