@@ -6,7 +6,14 @@ const bgMusic = document.getElementById("bgMusic");
 
 openBtn.addEventListener("click", () => {
 
-    bgMusic.play().catch(() => {});
+    bgMusic.volume = 0.7;
+bgMusic.currentTime = 0;
+
+bgMusic.play().then(() => {
+    console.log("Music Playing");
+}).catch(err => {
+    console.log(err);
+});
 
     intro.style.display = "none";
     flowerIntro.style.display = "flex";
