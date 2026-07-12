@@ -109,7 +109,6 @@ function createFlower(){
     }, 6000);
 }
 
-}
 // 📸 Memory Slideshow
 
 const images = [
