@@ -20,7 +20,46 @@ setTimeout(()=>{
 
     flowerIntro.style.display="none";
     birthday.style.display="block";
+let slideCount = 0;
 
+const slideShow = setInterval(() => {
+
+    current++;
+
+    slideCount++;
+
+    if(current >= images.length){
+        current = 0;
+    }
+
+    slide.style.opacity = "0";
+
+    setTimeout(() => {
+
+        slide.src = images[current];
+        caption.innerHTML = captions[current];
+        slide.style.opacity = "1";
+
+    },300);
+
+    // ❤️ 4 photos ke baad Memory Gift dikhao
+    if(slideCount == 4){
+
+        clearInterval(slideShow);
+
+        setTimeout(()=>{
+
+            document.getElementById("memoryGift").style.display="block";
+
+            document.getElementById("memoryGift").scrollIntoView({
+                behavior:"smooth"
+            });
+
+        },1000);
+
+    }
+
+},2500);
     setInterval(createHeart,450);
     setInterval(createSparkle,350);
     setInterval(createPetal,650);
@@ -192,43 +231,11 @@ let current=0;
 const slide=document.getElementById("slideImage");
 const caption=document.getElementById("photoCaption");
 
-setInterval(()=>{
 
-current++;
 
-if(current>=images.length) current=0;
-
-slide.style.opacity="0";
-
-setTimeout(()=>{
-
-slide.src=images[current];
-caption.innerHTML=captions[current];
-slide.style.opacity="1";
-
-},300);
-
-},2500);
-setTimeout(() => {
-    document.getElementById("memoryGift").style.display = "block";
-}, 11000);
 // 💌 Show second envelope after 15 seconds
 
-setTimeout(() => {
 
-    const gift = document.getElementById("memoryGift");
-
-    if(gift){
-
-        gift.style.display = "block";
-
-        gift.scrollIntoView({
-            behavior:"smooth"
-        });
-
-    }
-
-},15000);
 // ❤️ Memory Gift
 
 const memoryBtn = document.getElementById("memoryBtn");
@@ -250,10 +257,9 @@ const giftQuotes = [
     "You are my today, my tomorrow, and my forever. ❤️"
 ];
 
-let giftIndex = 0;
 
 memoryBtn.addEventListener("click", () => {
-
+let giftIndex = 0;
     document.getElementById("memoryGift").style.display = "none";
     photoReveal.style.display = "block";
 
