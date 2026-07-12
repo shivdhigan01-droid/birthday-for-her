@@ -41,7 +41,7 @@ function createHeart(){
     heart.style.position="fixed";
     heart.style.left=Math.random()*100+"vw";
     heart.style.top="-50px";
-    heart.style.fontSize=(18+Math.random()*10)+"px";
+    heart.style.fontSize=(15+Math.random()*8)+"px";
     heart.style.zIndex="999999";
     heart.style.pointerEvents="none";
     heart.style.animation="heartbeat 1.5s infinite";
