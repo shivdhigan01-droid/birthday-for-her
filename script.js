@@ -105,7 +105,7 @@ function createPetal(){
     petal.style.zIndex = "100000";
     petal.style.opacity = "0.9";
 
-    document.body.appendChild(petal);
+    document.getElementById("flowerContainer").appendChild(petal);
 
     let y = -30;
     let x = Math.random() * 40 - 20;
