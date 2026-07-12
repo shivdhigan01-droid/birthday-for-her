@@ -15,11 +15,17 @@ openBtn.addEventListener("click", () => {
 
     const rain = setInterval(createFlower,20);
 
-    setTimeout(()=>{
-        clearInterval(rain);
-        flowerIntro.style.display="none";
-        birthday.style.display="block";
-    },6000);
+setTimeout(()=>{
+    clearInterval(rain);
+
+    flowerIntro.style.display="none";
+    birthday.style.display="block";
+
+    setInterval(createHeart,450);
+    setInterval(createSparkle,350);
+    setInterval(createPetal,650);
+
+},6000);
 
 });
 
@@ -35,7 +41,7 @@ function createHeart(){
     heart.style.position="fixed";
     heart.style.left=Math.random()*100+"vw";
     heart.style.top="-50px";
-    heart.style.fontSize=(28+Math.random()*20)+"px";
+    heart.style.fontSize=(18+Math.random()*10)+"px";
     heart.style.zIndex="999999";
     heart.style.pointerEvents="none";
     heart.style.animation="heartbeat 1.5s infinite";
@@ -61,7 +67,6 @@ function createHeart(){
 
 }
 
-setInterval(createHeart,450);
 
 
 // ✨ SPARKLES
@@ -88,8 +93,6 @@ function createSparkle(){
     },1200);
 
 }
-
-setInterval(createSparkle,350);
 
 
 // 🌸 PETALS
@@ -130,7 +133,7 @@ function createPetal(){
 
 }
 
-setInterval(createPetal,650);
+
 
 
 // 🌹 PNG FLOWERS
