@@ -37,7 +37,7 @@ function createHeart() {
     heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.top = "-30px";
-    heart.style.fontSize = (18 + Math.random() * 20) + "px";
+    petal.style.fontSize = (35 + Math.random() * 20) + "px";
     heart.style.pointerEvents = "none";
     heart.style.zIndex = "9999";
     heart.style.filter = "drop-shadow(0 0 10px hotpink)";
@@ -102,7 +102,7 @@ function createPetal(){
     petal.style.top = "-30px";
     petal.style.fontSize = (20 + Math.random() * 18) + "px";
     petal.style.pointerEvents = "none";
-    petal.style.zIndex = "9998";
+    petal.style.zIndex = "100000";
     petal.style.opacity = "0.9";
 
     document.body.appendChild(petal);
